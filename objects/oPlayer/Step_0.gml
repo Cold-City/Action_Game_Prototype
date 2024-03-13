@@ -32,7 +32,7 @@ if (inputMagnitude) {
 centerY = y + centerYOffset
 aimDir = point_direction(x, centerY, mouse_x, mouse_y)
 
-
+//1
 if shootTimer > 0 {
 	shootTimer--
 }
