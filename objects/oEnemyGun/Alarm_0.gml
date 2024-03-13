@@ -1,0 +1,8 @@
+allow_shoot = true
+
+
+
+
+
+
+

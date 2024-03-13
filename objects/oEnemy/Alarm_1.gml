@@ -1,0 +1,8 @@
+gothit = false
+
+
+
+
+
+
+
