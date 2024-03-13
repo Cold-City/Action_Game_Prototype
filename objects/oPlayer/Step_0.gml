@@ -2,7 +2,7 @@ keyLeft = keyboard_check(ord("A"))
 keyRight = keyboard_check(ord("D"))
 keyUp = keyboard_check(ord("W"))
 keyDown = keyboard_check(ord("S"))
-
+shootkey = mouse_check_button(mb_left)
 //Player Movement
 #region
 //Input
@@ -32,6 +32,26 @@ if (inputMagnitude) {
 centerY = y + centerYOffset
 aimDir = point_direction(x, centerY, mouse_x, mouse_y)
 
+
+if shootTimer > 0 {
+	shootTimer--
+}
+if shootkey && shootTimer <= 0{
+	
+	shootTimer = shootCoolDown
+	
+	var _xOffset = lengthdir_x(weaponLength + weaponOffsetDist, aimDir)
+	var _yOffset = lengthdir_y(weaponLength + weaponOffsetDist, aimDir)
+	var _bulletInst = instance_create_depth(x + _xOffset, centerY + _yOffset, depth-100, oBullet)
+	screenshake(2,20)
+	audio_play_sound(sdPlayerShoot,1,false)
+	with _bulletInst {
+		dir = other.aimDir
+		image_angle = dir
+	}
+}
+
+
 //Sprite Control
 #region
 image_speed = 1
@@ -47,7 +67,7 @@ if xvelocity != 0 && gothit = false {
 
 #endregion
 
-
+//Collison
 if place_meeting(x,y,oEnemyBullet) {
 	gothit = true
 	hit_point-=1
@@ -82,6 +102,7 @@ if (knockback_speed > 0) {
 		
     }
 }
+
 if !audio_group_is_loaded(audiogroup_default) {
 	audio_group_load(audiogroup_default)
 }
