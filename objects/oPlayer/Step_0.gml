@@ -3,6 +3,8 @@ keyRight = keyboard_check(ord("D"))
 keyUp = keyboard_check(ord("W"))
 keyDown = keyboard_check(ord("S"))
 shootkey = mouse_check_button(mb_left)
+swapKeyPressed = keyboard_check_pressed(ord("Q"))
+
 //Player Movement
 #region
 //Input
@@ -33,21 +35,34 @@ centerY = y + centerYOffset
 aimDir = point_direction(x, centerY, mouse_x, mouse_y)
 
 //1
+
+var _playerweapons = global.Playerweapons
+
+if swapKeyPressed {
+	selectedweapon++
+	if selectedweapon >= array_length(_playerweapons) { selectedweapon = 0}
+	weapon = _playerweapons[selectedweapon]
+}
+
 if shootTimer > 0 {
 	shootTimer--
 }
 if shootkey && shootTimer <= 0{
 	
-	shootTimer = shootCoolDown
-	
-	var _xOffset = lengthdir_x(weaponLength + weaponOffsetDist, aimDir)
-	var _yOffset = lengthdir_y(weaponLength + weaponOffsetDist, aimDir)
-	var _bulletInst = instance_create_depth(x + _xOffset, centerY + _yOffset, depth-100, oBullet)
+	shootTimer = weapon.cooldown
 	screenshake(2,20)
 	audio_play_sound(sdPlayerShoot,1,false)
-	with _bulletInst {
-		dir = other.aimDir
-		image_angle = dir
+	var _xOffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir)
+	var _yOffset = lengthdir_y(weapon.length + weaponOffsetDist, aimDir)
+	
+	var _spread = weapon.spread
+	var _spreadDiv = _spread / weapon.bulletNum;
+	for( var i = 0; i < weapon.bulletNum; i++) {
+		var _bulletInst = instance_create_depth(x + _xOffset + i, centerY + _yOffset, depth-100, weapon.bulletObj)
+		with _bulletInst {
+			dir = other.aimDir - _spread/2 + _spreadDiv * i
+			image_angle = dir
+		}
 	}
 }
 

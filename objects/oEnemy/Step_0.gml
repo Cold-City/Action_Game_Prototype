@@ -26,7 +26,7 @@ switch state {
 	break;
 }
 
-if place_meeting(x,y,oBullet) && !invicible {
+if place_meeting(x,y,oRifleBullet) && !invicible {
 	var _effect = instance_create_layer(x, y, "Effects", oExplode);
 	takeDamage()
 	invicible = true
@@ -68,7 +68,7 @@ if (knockback_speed > 0) {
     }
 }
 
-if place_meeting(x,y,oBullet) {
+if place_meeting(x,y,oRifleBullet) {
 	gothit = true
 	sprite_index = sPlayerGotHit
 	alarm[1] = 20	

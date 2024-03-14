@@ -19,7 +19,7 @@ function takeDamage() {
 	if hit_point>1 {
 		hit_point-=1
 		show_debug_message(hit_point)
-		var bullet = instance_place(x, y, oBullet);
+		var bullet = instance_place(x, y, oRifleBullet);
 		if (bullet != noone) {
 		    // Collision detected, now apply knockback
 			knockback_speed = 10;
@@ -29,7 +29,7 @@ function takeDamage() {
 		}
 	}
 	else {
-		var bullet = instance_place(x, y, oBullet);
+		var bullet = instance_place(x, y, oRifleBullet);
 		if (bullet != noone) {
 		    // Collision detected, now apply knockback
 			knockback_speed = 10;
