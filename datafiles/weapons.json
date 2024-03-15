@@ -1,0 +1,30 @@
+{
+      "blueRifle": {
+        "sprite": "sBlueRifle",
+        "length": 29,
+        "bulletObj": "oRifleBullet",
+        "cooldown": 9,
+        "bulletNum": 1,
+        "spread" : 0,
+        "shakemag":4
+
+      },
+      "blueShotgun": {
+        "sprite": "sBlueShotgun",
+        "length": 29,
+        "bulletObj": "oShotgunBullet",
+        "cooldown": 30,
+        "bulletNum": 7,
+        "spread" : 45,
+        "shakemag":8
+      },
+      "AssaultRifle": {
+        "sprite": "sAssaultRifle",
+        "length": 34,
+        "bulletObj": "oAssaultRifleBullet",
+        "cooldown": 3,
+        "bulletNum": 3,
+        "spread" : 20,
+        "shakemag":2
+      }
+  }

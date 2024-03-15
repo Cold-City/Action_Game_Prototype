@@ -9,8 +9,27 @@ function weapon_creation(_sprite, _weaponLength, _bulletObj, _coolDown, _bulletn
 	spread = _spread
 }
 
-global.Playerweapons = array_create(0)
+function import_json(_file_name, _func) {
+	if file_exists(_file_name) {
+		var _file, _json_string
+		_file = file_text_open_read(_file_name)
+		_json_string = ""
+		while !file_text_eof(_file) {
+			_json_string += file_text_read_string(_file)
+			file_text_readln(_file)
+		}
+		file_text_close(_file)
+		return script_execute(_func,_json_string)
+	}
+	return undefined
+}
 
+
+
+global.Weapons = import_json("weapons.json",json_parse)
+
+global.Playerweapons = array_create(0)
+/*
 global.Weapons = {
 	blueRifle : new weapon_creation(
 		sBlueRifle,
@@ -33,7 +52,7 @@ global.Weapons = {
 		34,
 		oAssaultRifleBullet,
 		3,
-		1,
-		0
+		3,
+		20
 		),
 }

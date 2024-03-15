@@ -1,5 +1,19 @@
 randomize()
+var _collision = true
+var _getDamage = true
 switch state {
+	case EnemyState.Spawn:
+		if image_alpha < 1{
+			image_alpha += fadeSpd	
+		}
+		
+		_collision = false
+		if image_alpha>=1 {
+			speed = emergeSpd
+			direction = 270
+		}
+		
+	break;
 	//chase state
 	case EnemyState.Idle:
 	speed = 0
@@ -16,7 +30,7 @@ switch state {
             speed = 0;
             alarm[0] = room_speed * random_range(0, 1.5); // Idle for 2 to 4 seconds
         }
-		if (place_meeting(x + lengthdir_x(speed, direction), y + lengthdir_y(speed, direction), oWall)) {
+		if _collision == true && (place_meeting(x + lengthdir_x(speed, direction), y + lengthdir_y(speed, direction), oSolidWall)) {
             // If a collision is detected, switch to idle state and reset the alarm
 			knockback_direction *=-1
             state = EnemyState.Idle;
@@ -51,10 +65,10 @@ if speed != 0 && gothit == false{
 
 if (knockback_speed > 0) {
     // Apply movement in the knockback direction
-	if !place_meeting(x,y, oWall){
+	if !place_meeting(x,y, oSolidWall){
 		x += lengthdir_x(knockback_speed, knockback_direction);
 		y += lengthdir_y(knockback_speed, knockback_direction);
-	}else if place_meeting(x,y,oWall) {
+	}else if place_meeting(x,y,oSolidWall) {
 		x -= lengthdir_x(knockback_speed, knockback_direction);
 		y -= lengthdir_y(knockback_speed, knockback_direction);
 	}

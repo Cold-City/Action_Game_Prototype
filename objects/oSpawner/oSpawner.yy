@@ -1,21 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oRifleBullet",
+  "%Name":"oSpawner",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oRifleBullet",
+  "name":"oSpawner",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"oDamageEnemy",
-    "path":"objects/oDamageEnemy/oDamageEnemy.yy",
+    "name":"oSolidWall",
+    "path":"objects/oSolidWall/oSolidWall.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sRifleBullet",
-    "path":"sprites/sRifleBullet/sRifleBullet.yy",
+    "name":"sSpawner",
+    "path":"sprites/sSpawner/sSpawner.yy",
   },
   "spriteMaskId":null,
   "visible":true,

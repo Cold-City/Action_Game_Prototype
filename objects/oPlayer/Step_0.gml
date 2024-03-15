@@ -50,15 +50,30 @@ if shootTimer > 0 {
 if shootkey && shootTimer <= 0{
 	
 	shootTimer = weapon.cooldown
-	screenshake(2,20)
+	screenshake(weapon.shakemag,20)
 	audio_play_sound(sdPlayerShoot,1,false)
+	var player_x = x;
+	var player_y = y;
+	var cursor_x = mouse_x;
+	var cursor_y = mouse_y;
+	var angle_to_cursor = point_direction(player_x, player_y, cursor_x, cursor_y);
 	var _xOffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir)
 	var _yOffset = lengthdir_y(weapon.length + weaponOffsetDist, aimDir)
-	
+	var _bulletObject = asset_get_index(weapon.bulletObj)
+	var effect_x = player_x + lengthdir_x(30, angle_to_cursor);
+	var effect_y = player_y + lengthdir_y(irandom_range(20,30), angle_to_cursor);
+	var effect_instance = instance_create_layer(effect_x, effect_y, "Effects", oExplode);
+	var decal = instance_create_depth(x, y, depth, oPlayerBulletDecal)
+	with decal {
+		direction = random(360)
+		knockback_speed = 10
+	}
+	effect_instance.direction = angle_to_cursor;
+	effect_instance.image_angle = angle_to_cursor;
 	var _spread = weapon.spread
-	var _spreadDiv = _spread / weapon.bulletNum;
+	var _spreadDiv = _spread / max(weapon.bulletNum-1,1);
 	for( var i = 0; i < weapon.bulletNum; i++) {
-		var _bulletInst = instance_create_depth(x + _xOffset + i, centerY + _yOffset, depth-100, weapon.bulletObj)
+		var _bulletInst = instance_create_depth(x + _xOffset + i, centerY + _yOffset, depth-100, _bulletObject)
 		with _bulletInst {
 			dir = other.aimDir - _spread/2 + _spreadDiv * i
 			image_angle = dir
@@ -88,6 +103,7 @@ if place_meeting(x,y,oEnemyBullet) {
 	hit_point-=1
 	show_debug_message(hit_point)
 	sprite_index = sPlayerGotHit
+	screenshake(4,20)
 	var bullet = instance_place(x, y, oEnemyBullet);
 	if (bullet != noone) {
 		    // Collision detected, now apply knockback
@@ -125,6 +141,5 @@ if hit_point < 1 {
 	instance_create_layer(x,y,"Instances",oPlayerCorpse)
 	instance_create_layer(x,y,"Instances",oDeathScreen)
 	instance_destroy()
-	instance_destroy(player_gun)
 	
 }

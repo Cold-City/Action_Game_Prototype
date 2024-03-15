@@ -1,15 +1,17 @@
 enum EnemyState{
 	Idle,
-	Moving
+	Moving,
+	Spawn
 }
 
 state = EnemyState.Idle	
 
 close = 150
 far = 300
-next_time_I_think = 5
+fadeSpd = 1/15
+emergeSpd = 0.25
 
-hit_point = 2
+hit_point = 20
 knockback_speed = 0;
 knockback_direction = 0;
 
@@ -17,9 +19,10 @@ gun = instance_create_layer(x,y,"Instances",oEnemyGun)
 gun.owner = id
 function takeDamage() {
 	if hit_point>1 {
-		hit_point-=1
+		
 		show_debug_message(hit_point)
-		var bullet = instance_place(x, y, oRifleBullet);
+		var bullet = instance_place(x, y, oDamageEnemy);
+		hit_point-= bullet.damage
 		if (bullet != noone) {
 		    // Collision detected, now apply knockback
 			knockback_speed = 10;
