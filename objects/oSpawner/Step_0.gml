@@ -19,3 +19,14 @@ if dead == true && image_alpha>0 {
 if image_alpha<=0 instance_destroy()
 
 if place_meeting(x,y,oDamageEnemy) takeDamage()
+
+if gothit = false {
+		sprite_index = sSpawner
+		
+	}
+
+if place_meeting(x,y,oDamageEnemy) {
+	gothit = true
+	sprite_index = sSpawnerGotHit
+	alarm[0] = 5
+}

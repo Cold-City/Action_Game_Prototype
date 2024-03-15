@@ -17,6 +17,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"oAssaultBulletDecal","order":25,"path":"objects/oAssaultBulletDecal/oAssaultBulletDecal.yy",},
     {"name":"oAssaultRifleBullet","order":17,"path":"objects/oAssaultRifleBullet/oAssaultRifleBullet.yy",},
     {"name":"oAssaultRifleHitEffect","order":23,"path":"objects/oAssaultRifleHitEffect/oAssaultRifleHitEffect.yy",},
     {"name":"oCamera","order":1,"path":"objects/oCamera/oCamera.yy",},
@@ -36,7 +37,6 @@
     {"name":"oRifleHitEffect","order":21,"path":"objects/oRifleHitEffect/oRifleHitEffect.yy",},
     {"name":"oShotgunBullet","order":16,"path":"objects/oShotgunBullet/oShotgunBullet.yy",},
     {"name":"oShotgunBulletDecal","order":24,"path":"objects/oShotgunBulletDecal/oShotgunBulletDecal.yy",},
-    {"name":"oAssaultBulletDecal","order":25,"path":"objects/oAssaultBulletDecal/oAssaultBulletDecal.yy",},
     {"name":"oShotgunHitEffect","order":22,"path":"objects/oShotgunHitEffect/oShotgunHitEffect.yy",},
     {"name":"oSolidWall","order":15,"path":"objects/oSolidWall/oSolidWall.yy",},
     {"name":"oSpawner","order":20,"path":"objects/oSpawner/oSpawner.yy",},
@@ -76,6 +76,7 @@
     {"name":"sShotgunHitEffect","order":36,"path":"sprites/sShotgunHitEffect/sShotgunHitEffect.yy",},
     {"name":"sSolidWall","order":9,"path":"sprites/sSolidWall/sSolidWall.yy",},
     {"name":"sSpawner","order":34,"path":"sprites/sSpawner/sSpawner.yy",},
+    {"name":"sSpawnerGotHit","order":40,"path":"sprites/sSpawnerGotHit/sSpawnerGotHit.yy",},
     {"name":"sStoneGround","order":23,"path":"sprites/sStoneGround/sStoneGround.yy",},
     {"name":"sStruct","order":25,"path":"sprites/sStruct/sStruct.yy",},
     {"name":"sWall_1","order":16,"path":"sprites/sWall_1/sWall_1.yy",},

@@ -37,6 +37,7 @@
   "name":"Action_Game_Prototype",
   "resources":[
     {"id":{"name":"fn_game","path":"fonts/fn_game/fn_game.yy",},},
+    {"id":{"name":"oAssaultBulletDecal","path":"objects/oAssaultBulletDecal/oAssaultBulletDecal.yy",},},
     {"id":{"name":"oAssaultRifleBullet","path":"objects/oAssaultRifleBullet/oAssaultRifleBullet.yy",},},
     {"id":{"name":"oAssaultRifleHitEffect","path":"objects/oAssaultRifleHitEffect/oAssaultRifleHitEffect.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
@@ -57,7 +58,6 @@
     {"id":{"name":"oRifleHitEffect","path":"objects/oRifleHitEffect/oRifleHitEffect.yy",},},
     {"id":{"name":"oShotgunBullet","path":"objects/oShotgunBullet/oShotgunBullet.yy",},},
     {"id":{"name":"oShotgunBulletDecal","path":"objects/oShotgunBulletDecal/oShotgunBulletDecal.yy",},},
-    {"id":{"name":"oAssaultBulletDecal","path":"objects/oAssaultBulletDecal/oAssaultBulletDecal.yy",},},
     {"id":{"name":"oShotgunHitEffect","path":"objects/oShotgunHitEffect/oShotgunHitEffect.yy",},},
     {"id":{"name":"oSolidWall","path":"objects/oSolidWall/oSolidWall.yy",},},
     {"id":{"name":"oSpawner","path":"objects/oSpawner/oSpawner.yy",},},
@@ -101,6 +101,7 @@
     {"id":{"name":"sShotgunHitEffect","path":"sprites/sShotgunHitEffect/sShotgunHitEffect.yy",},},
     {"id":{"name":"sSolidWall","path":"sprites/sSolidWall/sSolidWall.yy",},},
     {"id":{"name":"sSpawner","path":"sprites/sSpawner/sSpawner.yy",},},
+    {"id":{"name":"sSpawnerGotHit","path":"sprites/sSpawnerGotHit/sSpawnerGotHit.yy",},},
     {"id":{"name":"sStoneGround","path":"sprites/sStoneGround/sStoneGround.yy",},},
     {"id":{"name":"sStruct","path":"sprites/sStruct/sStruct.yy",},},
     {"id":{"name":"sWall_1","path":"sprites/sWall_1/sWall_1.yy",},},

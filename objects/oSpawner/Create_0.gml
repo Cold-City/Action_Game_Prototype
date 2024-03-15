@@ -2,8 +2,9 @@ depth = -bbox_top
 
 timer = 0
 spawntime = 6*60
-hit_point = 300
+hit_point = 150
 dead = false
+gothit = false
 
 function takeDamage() {
 	if hit_point>1 {

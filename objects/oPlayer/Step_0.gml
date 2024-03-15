@@ -4,6 +4,7 @@ keyUp = keyboard_check(ord("W"))
 keyDown = keyboard_check(ord("S"))
 shootkey = mouse_check_button(mb_left)
 swapKeyPressed = keyboard_check_pressed(ord("Q"))
+restartKey = keyboard_check(ord("R"))
 
 //Player Movement
 #region
@@ -27,6 +28,16 @@ x += xvelocity
 y += yvelocity
 
 #endregion
+
+if restartKey {
+	room_restart()
+	x = 768
+	y = 111
+	hit_point = 15
+	
+	instance_deactivate_object(oCamera)
+	instance_activate_all()
+}
 
 if (inputMagnitude) {
     lastInputDirection = inputDirection;

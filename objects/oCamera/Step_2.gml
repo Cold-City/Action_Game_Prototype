@@ -1,5 +1,4 @@
 
-
 var _camW = camera_get_view_width(cam)
 var _camH = camera_get_view_height(cam)
 

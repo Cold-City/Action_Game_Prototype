@@ -1,5 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+//no longer useful
 function weapon_creation(_sprite, _weaponLength, _bulletObj, _coolDown, _bulletnum, _spread) constructor {
 	sprite = _sprite
 	length = _weaponLength
@@ -9,6 +10,7 @@ function weapon_creation(_sprite, _weaponLength, _bulletObj, _coolDown, _bulletn
 	spread = _spread
 }
 
+//import json function
 function import_json(_file_name, _func) {
 	if file_exists(_file_name) {
 		var _file, _json_string
@@ -23,8 +25,6 @@ function import_json(_file_name, _func) {
 	}
 	return undefined
 }
-
-
 
 global.Weapons = import_json("weapons.json",json_parse)
 
