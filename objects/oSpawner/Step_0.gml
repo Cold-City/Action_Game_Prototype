@@ -10,3 +10,12 @@ if timer > spawntime {
 	
 	timer = 0
 }
+
+
+if dead == true && image_alpha>0 {
+	image_alpha-=0.1
+}
+
+if image_alpha<=0 instance_destroy()
+
+if place_meeting(x,y,oDamageEnemy) takeDamage()
