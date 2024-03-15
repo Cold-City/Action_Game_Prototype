@@ -10,7 +10,7 @@ aimDir = 0
 face = 3
 
 gothit = false
-hit_point = 5
+hit_point = 15
 knockback_speed = 0;
 knockback_direction = 0;
 

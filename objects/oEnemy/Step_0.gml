@@ -40,18 +40,12 @@ switch state {
 	break;
 }
 
-if place_meeting(x,y,oRifleBullet) && !invicible {
+if place_meeting(x,y,oRifleBullet)  {
 	var _effect = instance_create_layer(x, y, "Effects", oExplode);
 	takeDamage()
 	invicible = true
 }
-if(invicible) { 
-	invicible_timer++;
-	if(invicible_timer > invicible_duration) {
-		invicible = false;
-		invicible_timer = 0;
-	}
-}
+
 image_speed = 1
 if speed != 0 image_xscale = sign(speed)
 if speed != 0 && gothit == false{

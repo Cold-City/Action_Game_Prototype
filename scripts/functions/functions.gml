@@ -22,3 +22,8 @@ function draw_my_weapon() {
 	var _sprite = asset_get_index(weapon.sprite)
 	draw_sprite_ext(_sprite, 0, x+_xOffset, centerY + _yOffset, 1, _weaponYsc1, aimDir, c_white,1)
 }
+
+global.enemyRoomMax = 100
+global.activeEnemyMax = 40
+global.totalEnemiesSpawned = 0
+global.enemyKillCount = 0
