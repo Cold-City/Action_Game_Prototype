@@ -60,10 +60,11 @@ if shootkey && shootTimer <= 0{
 	var _xOffset = lengthdir_x(weapon.length + weaponOffsetDist, aimDir)
 	var _yOffset = lengthdir_y(weapon.length + weaponOffsetDist, aimDir)
 	var _bulletObject = asset_get_index(weapon.bulletObj)
+	var _decal = asset_get_index(weapon.decal)
 	var effect_x = player_x + lengthdir_x(30, angle_to_cursor);
 	var effect_y = player_y + lengthdir_y(irandom_range(20,30), angle_to_cursor);
 	var effect_instance = instance_create_layer(effect_x, effect_y, "Effects", oExplode);
-	var decal = instance_create_depth(x, y, depth, oPlayerBulletDecal)
+	var decal = instance_create_depth(x, y, depth, _decal)
 	with decal {
 		direction = random(360)
 		knockback_speed = 10

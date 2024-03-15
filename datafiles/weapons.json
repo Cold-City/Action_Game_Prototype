@@ -6,8 +6,8 @@
         "cooldown": 9,
         "bulletNum": 1,
         "spread" : 0,
-        "shakemag":4
-
+        "shakemag":4,
+        "decal":"oRifleBulletDecal"
       },
       "blueShotgun": {
         "sprite": "sBlueShotgun",
@@ -16,7 +16,8 @@
         "cooldown": 30,
         "bulletNum": 7,
         "spread" : 45,
-        "shakemag":8
+        "shakemag":8,
+        "decal":"oShotgunBulletDecal"
       },
       "AssaultRifle": {
         "sprite": "sAssaultRifle",
@@ -25,6 +26,7 @@
         "cooldown": 3,
         "bulletNum": 3,
         "spread" : 20,
-        "shakemag":2
+        "shakemag":2,
+        "decal":"oAssaultBulletDecal"
       }
   }

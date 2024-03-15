@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oPlayerBulletDecal",
+  "%Name":"oShotgunBulletDecal",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPlayerBulletDecal",
+  "name":"oShotgunBulletDecal",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlayerBulletDecal",
-    "path":"sprites/sPlayerBulletDecal/sPlayerBulletDecal.yy",
+    "name":"sShotgunBulletDecal",
+    "path":"sprites/sShotgunBulletDecal/sShotgunBulletDecal.yy",
   },
   "spriteMaskId":null,
   "visible":true,
